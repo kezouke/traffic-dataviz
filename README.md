@@ -106,7 +106,7 @@ docker-compose down
 
 ## 📄 License
 
-MIT © 2025 – [Your Name or Org]
+MIT © 2025
 
 ---
 
