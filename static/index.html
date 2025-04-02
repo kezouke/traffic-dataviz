@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Traffic Visualization</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Container for the 3D globe (Three.js will inject a canvas here) -->
+  <div id="globe-container">
+    <!-- Top N locations list overlay -->
+    <div id="top-locations" class="glass-panel">
+      <h3>Top Locations</h3>
+      <ul id="locations-list"></ul>
+    </div>
+    <div style="
+      position:absolute;
+      bottom: 150px;
+      left: 30px;
+      color: #0ff;
+      font-size: 14px;
+      font-weight: 500;
+      font-family: 'Segoe UI', sans-serif;
+      letter-spacing: 0.3px;
+    ">
+      📈 Live Traffic Timeline
+    </div>
+    <!-- Timeline chart canvas overlay -->
+    <canvas id="timeline-chart"></canvas>
+    <!-- Pie (donut) chart canvas overlay -->
+    <canvas id="pie-chart"></canvas>
+  </div>
+
+  <!-- Include CDN-hosted JS libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Include custom JS modules -->
+  <script src="js/globe.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/dataHandler.js"></script>
+</body>
+</html>

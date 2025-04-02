@@ -1,0 +1,17 @@
+version: "3"
+services:
+  backend:
+    build:
+      context: .                # use the project root as context
+      dockerfile: backend/Dockerfile
+    ports:
+      - "5050:5000"
+    volumes:
+      - ./static:/app/static:ro
+
+  sender:
+    build:
+      context: ./sender         # this is fine
+    depends_on:
+      - backend
+

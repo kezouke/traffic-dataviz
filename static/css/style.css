@@ -1,0 +1,113 @@
+/* === Global Theme === */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #ffffff;
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+  height: 100%;
+  overflow: hidden;
+}
+
+#globe-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(ellipse at center, #000 0%, #111 100%);
+}
+
+/* === Glass Panel Utility === */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 12px 16px;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.15);
+  pointer-events: auto;
+}
+
+/* === Top Locations (Top Left) === */
+#top-locations {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 240px;
+  max-height: 240px;
+  overflow-y: auto;
+  color: #ffffff;
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+
+#top-locations.glass-panel {
+  pointer-events: auto;
+}
+
+#top-locations h3 {
+  margin-top: 0;
+  margin-bottom: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0ff;
+  letter-spacing: 0.5px;
+}
+
+#locations-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#locations-list li {
+  margin: 4px 0;
+  color: #eee;
+}
+
+/* === Timeline Chart (Bottom Center) === */
+#timeline-chart {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  height: 120px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+  padding: 8px;
+}
+
+/* === Pie Chart (Top Right) === */
+#pie-chart {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 160px;
+  height: 160px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+}
+
+/* === Scrollbar tweaks for Top Locations === */
+#locations-list::-webkit-scrollbar {
+  width: 6px;
+}
+#locations-list::-webkit-scrollbar-thumb {
+  background: #0ff;
+  border-radius: 3px;
+}
+
+/* === Responsive layout fixes === */
+@media screen and (max-width: 768px) {
+  #top-locations {
+    width: 180px;
+    font-size: 0.8rem;
+  }
+  #pie-chart {
+    width: 120px;
+    height: 120px;
+  }
+}
